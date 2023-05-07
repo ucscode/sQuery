@@ -34,6 +34,28 @@ The sQuery class provides a simplified and efficient way to interact with databa
 
    Replace `'tablename'` with the name of the table you want to select from, and `'condition'` with the desired condition for filtering the rows.
 
+   You have the flexibility to provide a string or an array as the third parameter of the select method. This allows you to select a specific range of columns in the generated SQL select statement.
+   
+   ```php
+   $insert = sQuery::select( "tablename", null, array(
+		"count.`name` as flash",
+		"username as sender",
+		"user.name",
+		"count(user.id) as range"
+	));
+   ```
+   The aliases allow you to provide custom names for the selected columns in the generated SQL statement.\
+   The result of executing the above code is:
+   
+   ```sql
+   SELECT 
+      `count`.`name` AS `flash`, 
+      `username` AS `sender`, 
+      `user`.`name`, 
+      count(user.id) AS `range` 
+   FROM `tablename` WHERE 1
+   ```
+   
 <br/>
 
 3. To generate an INSERT query, use the `insert()` method:
@@ -43,10 +65,15 @@ The sQuery class provides a simplified and efficient way to interact with databa
       'column1' => 'value1', 
       'column2' => 'value2'
    );
-   $query = sQuery::insert('tablename', $data, $mysqli);
+   $query = sQuery::insert('tablename', $data);
    ```
 
-   Replace `'tablename'` with the name of the table you want to insert into, `$data` with an associative array containing the column-value pairs, and `$mysqli` with a valid MySQLi object if you want to escape the values.
+   Replace `'tablename'` with the name of the table you want to insert into, `$data` with an associative array containing the column-value pairs.\
+   The result of executing the above code is:
+   
+   ```sql
+   INSERT INTO `tablename` (`column1`, `column2`) VALUES ('value1', 'value2')
+   ```
 
 </br>
 
@@ -57,11 +84,16 @@ The sQuery class provides a simplified and efficient way to interact with databa
       'column1' => 'value1', 
       'column2' => 'value2'
    );
-   $query = sQuery::update('tablename', $data, 'condition', $mysqli);
+   $query = sQuery::update('tablename', $data, 1);
    ```
 
-   Replace `'tablename'` with the name of the table you want to update, `$data` with an associative array containing the column-value pairs, `'condition'` with the condition for filtering the rows to be updated, and `$mysqli` with a valid MySQLi object if you want to escape the values.
-
+   Replace `'tablename'` with the name of the table you want to update, `$data` with an associative array containing the column-value pairs, `'condition'` with the condition for filtering the rows to be updated.\
+   The result of executing the above code is:
+   
+   ```sql
+   UPDATE `tablename` SET `column1` = 'value1', `column2` = 'value2' WHERE 1
+   ```
+   
 <br/>
 
 5. To generate a DELETE query, use the `delete()` method:

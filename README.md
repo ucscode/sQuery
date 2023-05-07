@@ -37,7 +37,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
    You have the flexibility to provide a string or an array as the third parameter of the select method. This allows you to select a specific range of columns in the generated SQL select statement.
    
    ```php
-   $insert = sQuery::select( "tablename", null, array(
+   $query = sQuery::select( "tablename", null, array(
 		"count.`name` as flash",
 		"username as sender",
 		"user.name",

@@ -23,6 +23,8 @@ The sQuery class provides a simplified and efficient way to interact with databa
    ```php
    require_once 'sQuery.php';
    ```
+   
+<br/>
 
 2. To generate a SELECT query, use the `select()` method:
 
@@ -31,6 +33,8 @@ The sQuery class provides a simplified and efficient way to interact with databa
    ```
 
    Replace `'tablename'` with the name of the table you want to select from, and `'condition'` with the desired condition for filtering the rows.
+
+<br/>
 
 3. To generate an INSERT query, use the `insert()` method:
 
@@ -44,6 +48,8 @@ The sQuery class provides a simplified and efficient way to interact with databa
 
    Replace `'tablename'` with the name of the table you want to insert into, `$data` with an associative array containing the column-value pairs, and `$mysqli` with a valid MySQLi object if you want to escape the values.
 
+</br>
+
 4. To generate an UPDATE query, use the `update()` method:
 
    ```php
@@ -56,6 +62,8 @@ The sQuery class provides a simplified and efficient way to interact with databa
 
    Replace `'tablename'` with the name of the table you want to update, `$data` with an associative array containing the column-value pairs, `'condition'` with the condition for filtering the rows to be updated, and `$mysqli` with a valid MySQLi object if you want to escape the values.
 
+<br/>
+
 5. To generate a DELETE query, use the `delete()` method:
 
    ```php
@@ -63,6 +71,8 @@ The sQuery class provides a simplified and efficient way to interact with databa
    ```
 
    Replace `'tablename'` with the name of the table you want to delete from, and `'condition'` with the condition for filtering the rows to be deleted.
+
+<br/>
 
 ## Limitations
 

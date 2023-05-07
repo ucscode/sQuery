@@ -117,7 +117,7 @@ It's important to note that the sQuery class provided is designed to handle basi
 
 While the class simplifies the construction of SELECT, INSERT, UPDATE, and DELETE queries for individual tables, it may not be suitable for scenarios where JOIN operations are required to combine data from multiple tables. JOIN queries typically involve more complex logic and require a different approach to handle the join conditions and table relationships.
 
-For more advanced queries involving JOINs or complex SQL statements, it is advisable to utilize comprehensive database abstraction libraries or frameworks. If your requirements exceed the capabilities of the sQuery class, you create your own SQL query tailored to your specific needs.
+For more advanced queries involving JOINs or complex SQL statements, it is advisable to utilize comprehensive database abstraction libraries or frameworks. If your requirements exceed the capabilities of the sQuery class, it is recommended that you create your own SQL query tailored to your specific needs.
 
 However, for simple CRUD operations on individual tables, the sQuery class can still be a helpful tool to generate the basic SQL queries needed. It offers a convenient and concise way to construct queries without the need to write SQL statements manually.
 

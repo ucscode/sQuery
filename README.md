@@ -121,6 +121,10 @@ For more advanced queries involving JOINs or complex SQL statements, it is advis
 
 However, for simple CRUD operations on individual tables, the sQuery class can still be a helpful tool to generate the basic SQL queries needed. It offers a convenient and concise way to construct queries without the need to write SQL statements manually.
 
+## Warning
+
+It is important to note that the sQuery library does not automatically sanitize user input. When using the library, it is crucial to sanitize any user-supplied data before passing it as input to the sQuery methods.
+
 ## Note
 
 Please note that the `sQuery` class only generates SQL query strings; it does not execute them against a database. To execute these queries, you would need to establish a database connection and use appropriate methods from the MySQLi or PDO libraries.

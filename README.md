@@ -99,10 +99,15 @@ The sQuery class provides a simplified and efficient way to interact with databa
 5. To generate a DELETE query, use the `delete()` method:
 
    ```php
-   $query = sQuery::delete('tablename', 'condition');
+   $query = sQuery::delete('tablename', 'id = 5');
    ```
 
-   Replace `'tablename'` with the name of the table you want to delete from, and `'condition'` with the condition for filtering the rows to be deleted.
+   Replace `'tablename'` with the name of the table you want to delete from, and `'condition'` with the condition for filtering the rows to be deleted.\
+   The result of executiing the above code is
+   
+   ```sql
+   DELETE FROM `tablename` WHERE id = 5
+   ```
 
 <br/>
 

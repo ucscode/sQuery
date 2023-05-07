@@ -44,7 +44,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
 		"count(user.id) as range"
 	));
    ```
-   The aliases allow you to provide custom names for the selected columns in the generated SQL statement.\
+   Using aliases allow you to provide custom names for the selected columns in the generated SQL statement.\
    The result of executing the above code is:
    
    ```sql

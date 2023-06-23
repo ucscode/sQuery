@@ -1,8 +1,8 @@
-# sQuery
+# SQuery
 
-sQuery is a simple PHP class that provides a convenient way to construct SQL queries. It offers static methods for generating SELECT, INSERT, UPDATE, and DELETE queries, making it easier to interact with databases in PHP.
+SQuery is a simple PHP class that provides a convenient way to construct SQL queries. It offers static methods for generating SELECT, INSERT, UPDATE, and DELETE queries, making it easier to interact with databases in PHP.
 
-The sQuery class provides a simplified and efficient way to interact with databases in PHP, specifically by easing the CRUD (Create, Read, Update, Delete) operations.
+The SQuery class provides a simplified and efficient way to interact with databases in PHP, specifically by easing the CRUD (Create, Read, Update, Delete) operations.
 
 ## Features
 
@@ -18,10 +18,10 @@ The sQuery class provides a simplified and efficient way to interact with databa
 
 ## Usage
 
-1. Include the `sQuery` class in your PHP file:
+1. Include the `SQuery` class in your PHP file:
 
    ```php
-   require_once 'sQuery.php';
+   require_once 'SQuery.php';
    ```
    
 <br/>
@@ -29,7 +29,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
 2. To generate a SELECT query, use the `select()` method:
 
    ```php
-   $query = sQuery::select('tablename', 'condition');
+   $query = SQuery::select('tablename', 'condition');
    ```
 
    Replace `'tablename'` with the name of the table you want to select from, and `'condition'` with the desired condition for filtering the rows.
@@ -37,7 +37,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
    You have the flexibility to provide a string or an array as the third parameter of the select method. This allows you to select a specific range of columns in the generated SQL select statement.
    
    ```php
-   $query = sQuery::select( "tablename", null, array(
+   $query = SQuery::select( "tablename", null, array(
 		"count.`name` as flash",
 		"username as sender",
 		"user.name",
@@ -65,7 +65,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
       'column1' => 'value1', 
       'column2' => 'value2'
    );
-   $query = sQuery::insert('tablename', $data);
+   $query = SQuery::insert('tablename', $data);
    ```
 
    Replace `'tablename'` with the name of the table you want to insert into, `$data` with an associative array containing the column-value pairs.\
@@ -84,7 +84,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
       'column1' => 'value1', 
       'column2' => 'value2'
    );
-   $query = sQuery::update('tablename', $data, 1);
+   $query = SQuery::update('tablename', $data, 1);
    ```
 
    Replace `'tablename'` with the name of the table you want to update, `$data` with an associative array containing the column-value pairs, `'condition'` with the condition for filtering the rows to be updated.\
@@ -99,7 +99,7 @@ The sQuery class provides a simplified and efficient way to interact with databa
 5. To generate a DELETE query, use the `delete()` method:
 
    ```php
-   $query = sQuery::delete('tablename', 'id = 5');
+   $query = SQuery::delete('tablename', 'id = 5');
    ```
 
    Replace `'tablename'` with the name of the table you want to delete from, and `'condition'` with the condition for filtering the rows to be deleted.\
@@ -113,21 +113,21 @@ The sQuery class provides a simplified and efficient way to interact with databa
 
 ## Limitations
 
-It's important to note that the sQuery class provided is designed to handle basic CRUD operations and may not support more advanced queries involving JOIN clauses or complex SQL statements.
+It's important to note that the SQuery class provided is designed to handle basic CRUD operations and may not support more advanced queries involving JOIN clauses or complex SQL statements.
 
 While the class simplifies the construction of SELECT, INSERT, UPDATE, and DELETE queries for individual tables, it may not be suitable for scenarios where JOIN operations are required to combine data from multiple tables. JOIN queries typically involve more complex logic and require a different approach to handle the join conditions and table relationships.
 
-For more advanced queries involving JOINs or complex SQL statements, it is advisable to utilize comprehensive database abstraction libraries or frameworks. If your requirements exceed the capabilities of the sQuery class, it is highly recommended that you create your own SQL query tailored to your specific needs.
+For more advanced queries involving JOINs or complex SQL statements, it is advisable to utilize comprehensive database abstraction libraries or frameworks. If your requirements exceed the capabilities of the SQuery class, it is highly recommended that you create your own SQL query tailored to your specific needs.
 
-However, for simple CRUD operations on individual tables, the sQuery class can still be a helpful tool to generate the basic SQL queries needed. It offers a convenient and concise way to construct queries without the need to write SQL statements manually.
+However, for simple CRUD operations on individual tables, the SQuery class can still be a helpful tool to generate the basic SQL queries needed. It offers a convenient and concise way to construct queries without the need to write SQL statements manually.
 
 ## Warning
 
-It is important to note that the sQuery library does not automatically sanitize user input. When using the library, it is crucial to sanitize any user-supplied data before passing it as input to the sQuery methods.
+It is important to note that the SQuery library does not automatically sanitize user input. When using the library, it is crucial to sanitize any user-supplied data before passing it as input to the SQuery methods.
 
 ## Note
 
-Please note that the `sQuery` class only generates SQL query strings; it does not execute them against a database. To execute these queries, you would need to establish a database connection and use appropriate methods from the MySQLi or PDO libraries.
+Please note that the `SQuery` class only generates SQL query strings; it does not execute them against a database. To execute these queries, you would need to establish a database connection and use appropriate methods from the MySQLi or PDO libraries.
 
 ## License
 
